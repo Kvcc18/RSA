@@ -62,3 +62,7 @@ print("Longitud del mensaje en bytes: ", len(msg.encode('utf-8')))
 #Convertir el mensaje a número
 m = int.from_bytes(msg.encode('utf-8'), byteorder = 'big')
 print("Mensaje convertido en entero: ", m, "\n")
+
+#Ciframos el mensaje 
+c = pow(m, e, nB)
+print("Mensaje cifrado: ", c, "\n")

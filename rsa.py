@@ -40,3 +40,19 @@ print("phiA: ", phiA, "\n")
 
 phiB = (pB - 1) * (qB - 1)
 print("phiB: ", phiB, "\n")
+
+
+#Por razones de eficiencia usaremos el número 4 de Fernat: 65537, debido a que es 
+#un primo largo y no es potencia de 2, y como forma parte de la clave pública, no es 
+#necesario calcularlo
+e = 65537
+
+#Calcular la llave privada de Alice y Bob
+dA = Crypto.Util.number.inverse(e, phiA)
+print("dA: ", dA, "\n")
+
+dB = Crypto.Util.number.inverse(e, phiB)
+print("dB: ", dB, "\n")
+
+#Ciframos el mensaje
+msg = 'hola mundo'

@@ -65,3 +65,7 @@ print("Mensaje cifrado: ", c, "\n")
 #Desciframos el mensaje 
 des = pow(c, dB, nB)
 print("Mensaje descifrado: ", des, "\n")
+
+#Convertimos el mensaje de número a texto
+msg_final = int.to_bytes(des, len(msg), byteorder = 'big').decode('utf-8')
+print("Mensaje final: ", msg_final, "\n")
